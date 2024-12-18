@@ -36,7 +36,10 @@
               $(html).find('a').each(function() {
                 const href = $(this).attr('href');
                 const text = $(this).text();
-                $('body').append('<a href="' + href + '">' + text + '</a>');
+                if (text != "../")
+                {
+                  $('body').append('<a href="https://info.goeschess.xyz/' + href + '">' + text + '</a><br />');
+                }
               });
             }
           });
