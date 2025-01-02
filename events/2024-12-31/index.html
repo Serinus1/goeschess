@@ -59,25 +59,5 @@
       Violet v Gautham - <a href="https://info.goeschess.xyz/2024-12-31/Gautham v Violet.jpg">Scoresheet</a> and <a href="https://lichess.org/gLgvDdu2/black">Lichess Link</a> and <a href="https://info.goeschess.xyz/2024-12-31/Gautham v Violet.txt">PGN text</a><br />
 
     </div>
-      <h3>Scoresheets</h3>
-      <div>
-        <script>
-          $(document).ready(function() {
-            $.ajax({
-              url: 'https://info.goeschess.xyz/2024-12-31/',
-              success: function(html) {
-                $(html).find('a').each(function() {
-                  const href = $(this).attr('href');
-                  const text = $(this).text();
-                  if (text != "../")
-                  {
-                    $('body').append('<a href="https://info.goeschess.xyz/2024-12-31/' + href + '">' + text + '</a><br />');
-                  }
-                });
-              }
-            });
-          });
-      </script>
-      </div>
   </body>
 </html>
