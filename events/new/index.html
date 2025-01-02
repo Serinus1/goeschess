@@ -25,14 +25,14 @@
       <script>
         $(document).ready(function() {
           $.ajax({
-            url: 'https://info.goeschess.xyz',
+            url: 'https://info.goeschess.xyz/newevent/',
             success: function(html) {
               $(html).find('a').each(function() {
                 const href = $(this).attr('href');
                 const text = $(this).text();
                 if (text != "../")
                 {
-                  $('body').append('<a href="https://info.goeschess.xyz/' + href + '">' + text + '</a><br />');
+                  $('body').append('<a href="https://info.goeschess.xyz/newevent/' + href + '">' + text + '</a><br />');
                 }
               });
             }
