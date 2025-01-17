@@ -12,52 +12,104 @@
       body {
         font-family: 'Roboto', serif;
         font-optical-sizing: auto;
-      }
-      .row {
-        display: flex;
+        background-color: #f2f2f2; /* Add a light background color */
+        margin: 0; /* Reset default margin */
+        padding: 0; /* Reset default padding */
       }
 
-      .column {
-        flex: 50%;
+      .container {
+        max-width: 960px; /* Set a maximum width for the content */
+        margin: 0 auto; /* Center the content */
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* Vertically align header elements */
+        background-color: #e0e0e0; /* Add a background color to the header */
+        padding: 20px;
+      }
+
+      .header h1 {
+        margin: 0; /* Remove default margin */
+        font-size: 2.5em;
+      }
+
+      .header img {
+        height: 100px; /* Adjust image height as needed */
+        margin-left: auto; /* Push the image to the right */
+      }
+
+      .content {
+        padding: 20px;
+        background-color: #fff; /* Add a white background for content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+      }
+
+      .infofiles a {
+        display: block; /* Make each link a block element */
+        margin-bottom: 10px; /* Add space between links */
+        color: #333; /* Darken link color */
+        text-decoration: none; /* Remove underlines from links */
+      }
+
+      .infofiles a:hover {
+        text-decoration: underline; /* Add underline on hover */
+      }
+
+      h2, h3, h4 {
+        color: #333; /* Darken heading colors */
       }
     </style>
   </head>
   <body>
-    <h1 style="float:left;">Glen Oak Elementary Chess</h1>
-    <img src="images/GlenOak_Goats_Mascot-Head.webp" />
-    <div style="clear:both;"></div>
-    <h3>Glen Oak Blitz Tournament</h3>
-    <h4>Friday, January 31st, 7pm</h4>
-    <p>Glen Oak Elementary School welcomes you for a fun tournament that has something for everyone!  
-      We're offering two different sections. Players will play in all rounds. <a href="https://new.uschess.org/form/first-time-member-new-player-">USCF Membership</a> 
-      is encouraged and required for the rated section. ($24 for a year through <a href="https://new.uschess.org/join-us-chess">their site</a>) USCF Membership is not required to play in the unrated section.</p>
-    <p><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Staff, Contact, and Concessions Info</a></p>
-    <p><a href="https://info.goeschess.xyz/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
-    </div>
-    <h3>Standings & Pairings</h3>
-    <div class="infofiles">
-      <script>
-        $(document).ready(function() {
-          $.ajax({
-            url: 'https://info.goeschess.xyz/2025-01-31/',
-            success: function(html) {
-              $(html).find('a').each(function() {
-                const href = $(this).attr('href');
-                const text = $(this).text();
-                if (text != "../")
-                {
-                  $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
+    <div class="container">
+      <div class="header">
+        <h1>Glen Oak Elementary Chess</h1>
+        <img src="images/GlenOak_Goats_Mascot-Head.webp" />
+      </div>
+      <div class="content">
+        <h3>Glen Oak Blitz Tournament</h3>
+        <h4>Friday, January 31st, 7pm</h4>
+        <p>Glen Oak Elementary School welcomes you for a fun tournament that has something for everyone!
+        We're offering two different sections. Players will play in all rounds.
+        <a href="https://new.uschess.org/form/first-time-member-new-player-">USCF Membership</a> 
+          is encouraged and required for the rated section.
+        ($24 for a year through <a href="https://new.uschess.org/join-us-chess">their site</a>) USCF Membership is not required to play in the unrated section.</p>
+        <p><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Staff, Contact, and Concessions Info</a></p>
+        <p><a href="https://info.goeschess.xyz/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
+      </div>
+      <div class="content">
+        <h3>Standings & Pairings</h3>
+        <div class="infofiles">
+          <script>
+            $(document).ready(function() {
+              $.ajax({
+                url: 'https://info.goeschess.xyz/2025-01-31/',
+
+                success: function(html) {
+                  $(html).find('a').each(function() {
+                    const href = $(this).attr('href');
+                    const text = $(this).text();
+                    if (text != "../")
+                    
+                    {
+                      $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
+                    }
+                  });
                 }
               });
-            }
-          });
-        });
-      </script>
+            });
+          </script>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Past Events</h3>
+        <ul>
+          <li><a href="events/2024-10-16/index.html">Glen Oak Fall Scholastic - November 16th, 2024</a></li>        
+          <li><a href="events/new">Next Event</a></li>
+        </ul>
+      </div>
     </div>
-      <h3>Past Events</h3>
-      <ul>
-        <li><a href="events/2024-10-16/index.html">Glen Oak Fall Scholastic - November 16th, 2024</a></li>        
-        <li><a href="events/new">Next Event</a></li>
-      </ul>
   </body>
 </html>
