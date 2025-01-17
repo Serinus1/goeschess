@@ -107,7 +107,7 @@
                 success: function(html) {
                   $(html).find('a').each(function() {
                     const href = $(this).attr('href');
-                    const text = $(this).text();
+                    const text = $(this).text().replace(".html", "");
                     if (text != "../") {
                       $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
                     }
