@@ -5,9 +5,12 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style type="text/css">
       body {
-        font-family: "Roboto", serif;
+        font-family: 'Roboto', serif;
         font-optical-sizing: auto;
       }
       .row {
@@ -30,7 +33,7 @@
       is encouraged and required for the rated section. ($24 for a year through <a href="https://new.uschess.org/join-us-chess">their site</a>) USCF Membership is not required to play in the unrated section.</p>
     <p><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Staff, Contact, and Concessions Info</a></p>
     <h3>Standings & Pairings</h3>
-    <div>
+    <div class="infofiles">
       <script>
         $(document).ready(function() {
           $.ajax({
@@ -41,13 +44,13 @@
                 const text = $(this).text();
                 if (text != "../")
                 {
-                  $('body').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
+                  $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
                 }
               });
             }
           });
         });
-    </script>
+      </script>
     </div>
       <h3>Past Events</h3>
       <ul>
