@@ -73,27 +73,6 @@
         <img src="images/GlenOak_Goats_Mascot-Head.webp" />
       </div>
       <div class="content">
-        <h3>Standings & Pairings</h3>
-        <div class="infofiles">
-          <script>
-            $(document).ready(function() {
-              $.ajax({
-                url: 'https://info.goeschess.xyz/newevent/',
-                success: function(html) {
-                  $(html).find('a').each(function() {
-                    const href = $(this).attr('href');
-                    const text = $(this).text().replace(".html", "");
-                    if (text != "../") {
-                      $('.infofiles').append('<a href="https://info.goeschess.xyz/newevent/' + href + '">' + text + '</a><br />');
-                    }
-                  });
-                }
-              });
-            });
-          </script>
-        </div>
-      </div>
-      <div class="content">
         <h3>Friday Night Blitz Scholastic (K-6 only)</h3>
         <div class="subtext" style="font-size: 14px;">
           Friday, May 2nd, 2025<br />
@@ -116,6 +95,27 @@
         <p style="visibility: hidden;"><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Event Info</a></p>
         <p style="visibility: hidden;"><a href="images/concessions.png">Concessions</a></p>
         <p><a href="https://info.goeschess.xyz/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
+      </div>
+      <div class="content">
+        <h3>Standings & Pairings</h3>
+        <div class="infofiles">
+          <script>
+            $(document).ready(function() {
+              $.ajax({
+                url: 'https://info.goeschess.xyz/newevent/',
+                success: function(html) {
+                  $(html).find('a').each(function() {
+                    const href = $(this).attr('href');
+                    const text = $(this).text().replace(".html", "");
+                    if (text != "../") {
+                      $('.infofiles').append('<a href="https://info.goeschess.xyz/newevent/' + href + '">' + text + '</a><br />');
+                    }
+                  });
+                }
+              });
+            });
+          </script>
+        </div>
       </div>
       <div class="content">
         <h3>Past Events</h3>
