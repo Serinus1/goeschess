@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GOES Chess Tournament</title>
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv='pragma' content='no-cache'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body {
+        font-family: 'Roboto', serif;
+        font-optical-sizing: auto;
+        background-color: #f2f2f2; /* Add a light background color */
+        margin: 0; /* Reset default margin */
+        padding: 0; /* Reset default padding */
+      }
+
+      .container {
+        max-width: 960px; /* Set a maximum width for the content */
+        margin: 0 auto; /* Center the content */
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* Vertically align header elements */
+        background-color: #e0e0e0; /* Add a background color to the header */
+        padding: 20px;
+      }
+
+      .header h1 {
+        margin: 0; /* Remove default margin */
+        font-size: 2.5em;
+      }
+
+      .header img {
+        height: 100px; /* Adjust image height as needed */
+        margin-left: auto; /* Push the image to the right */
+      }
+
+      .content {
+        padding: 20px;
+        background-color: #fff; /* Add a white background for content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        margin-top: 20px; /* Add spacing between content and header */
+      }
+
+      .infofiles a {
+        display: block; /* Make each link a block element */
+        margin-bottom: 10px; /* Add space between links */
+        color: #333; /* Darken link color */
+        text-decoration: none; /* Remove underlines from links */
+      }
+
+      .infofiles a:hover {
+        text-decoration: underline; /* Add underline on hover */
+      }
+
+      h2, h3, h4 {
+        color: #333; /* Darken heading colors */
+        margin-top: 20px; /* Add spacing between headings and content */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Glen Oak Elementary Chess</h1>
+        <img src="images/GlenOak_Goats_Mascot-Head.webp" />
+      </div>
+      <div class="content">
+        <h3>Friday Night Blitz Scholastic (K-6 only)</h3>
+        <div class="subtext" style="font-size: 14px;">
+          Friday, January 31, 2025<br />
+          Glen Oak Elementary School<br />
+          7300 Blue Holly Drive<br />
+          Lewis Center, Ohio 43035<br />
+          Check in by <span style="font-weight: bold">6:30</span>, Round 1 begins at 7:00<br />
+        </div>
+        <p>Glen Oak Elementary School welcomes you for a fun tournament that has something for everyone! We're offering two different sections. Players will play in all rounds. <a href="https://new.uschess.org/form/first-time-member-new-player-">USCF Membership</a> is encouraged and required for the rated section. ($24 for a year through <a href="https://new.uschess.org/join-us-chess">their site.</a>) USCF Membership is not required to play in the unrated section.</p>
+        <div class="details">
+          <span style="font-weight: bold">Time controls:</span>  Both sections will be G/5, d0. This will be a five round (6 if there’s time) Swiss System tournament. All players will play all rounds and no one gets eliminated.<br />
+          <span style="font-weight: bold">Sections:</span>  Unrated  (novice) and rated. Note:  USCF membership is mandatory for those playing in the rated section. Blitz games will not impact your regular USCF rating!  Thinking of joining USCF? Now is a great time to sign up and play in a fun, low-key setting. Please log on to USCF.org or purchase a membership in the event registration and the tournament director will assist in setting up a youth USCF membership.<br />
+          <span style="font-weight: bold">Entry fees:</span>  <a href="https://form.jotform.com/250084488373160">$10.00 per student. Register here.</a>  Concessions will also be available.  “Glen Oak Meals” will be available for $5.00 (includes a slice of pizza, drink, bag of chips and cookie).<br />
+          <span style="font-weight: bold">Check-in:</span> Players can check in as early as 6:00pm. I would encourage all families to be checked in by 6:30pm. Please purchase a USCF membership on the registration form, if applicable. Announcements will be made at 6:45 and play will begin at 7:00. The goal is to have everything wrapped up by 9:00.<br />
+          <span style="font-weight: bold">Awards:</span>  Trophies to the top two in the unrated section. The top six places in the rated section will earn a trophy. Medals will be awarded to those finishing with at least 2.5 points.<br />
+          <span style="font-weight: bold">Special Blitz rules:</span>  If you make an illegal move that puts or leaves your king in check, you automatically lose. Other infractions incur a one minute penalty.  If this happens, please notify a tournament staff member.<br />
+          <br />
+          Space is limited! The event will be capped at 80 participants!  Please register early! No registrations will be accepted after Wednesday, January 29, 2025 at 8:00 p.m.<br />
+          <span style="font-weight: bold">Winter weather disclaimer:</span>   If school is cancelled, the event will be rescheduled.<br />
+        </div>
+        <p><a href="images/organizer.png">Contact Info</a></p>
+        <p><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Event Info</a></p>
+        <p><a href="images/concessions.png">Concessions</a></p>
+        <p><a href="https://info.goeschess.xyz/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
+      </div>
+      <div class="content">
+        <h3>Standings & Pairings</h3>
+        <div class="infofiles">
+          <script>
+            $(document).ready(function() {
+              $.ajax({
+                url: 'https://info.goeschess.xyz/2025-01-31/',
+                success: function(html) {
+                  $(html).find('a').each(function() {
+                    const href = $(this).attr('href');
+                    const text = $(this).text().replace(".html", "");
+                    if (text != "../") {
+                      $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
+                    }
+                  });
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+      <div class="content">
+        <h3>Past Events</h3>
+        <ul>
+          <li><a href="events/2024-10-16/index.html">Glen Oak Fall Scholastic - November 16th, 2024</a></li>        
+          <li><a href="events/new">Next Event</a></li>
+          <li>Glen Oak Bughouse - Friday, May 2nd, 2025</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
