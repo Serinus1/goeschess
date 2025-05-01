@@ -32,14 +32,14 @@
       <script>
         $(document).ready(function() {
           $.ajax({
-            url: 'https://info.goeschess.xyz/newevent/',
+            url: 'https://info.glenoakchess.org/newevent/',
             success: function(html) {
               $(html).find('a').each(function() {
                 const href = $(this).attr('href');
                 const text = $(this).text();
                 if (text != "../")
                 {
-                  $('.infofiles').append('<a href="https://info.goeschess.xyz/newevent/' + href + '">' + text + '</a><br />');
+                  $('.infofiles').append('<a href="https://info.glenoakchess.org/newevent/' + href + '">' + text + '</a><br />');
                 }
               });
             }

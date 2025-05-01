@@ -96,7 +96,7 @@
         <p><a href="images/organizer.png">Contact Info</a></p>
         <p><a href="https://docs.google.com/presentation/d/1rTHW1LknaO5oqy5Pcn_c-OtH7e1KTuDKHxs8ZWKkvO4">Event Info</a></p>
         <p><a href="images/concessions.png">Concessions</a></p>
-        <p><a href="https://info.goeschess.xyz/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
+        <p><a href="https://info.glenoakchess.org/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
       </div>
       <div class="content">
         <h3>Standings & Pairings</h3>
@@ -104,13 +104,13 @@
           <script>
             $(document).ready(function() {
               $.ajax({
-                url: 'https://info.goeschess.xyz/2025-01-31/',
+                url: 'https://info.glenoakchess.org/2025-01-31/',
                 success: function(html) {
                   $(html).find('a').each(function() {
                     const href = $(this).attr('href');
                     const text = $(this).text().replace(".html", "");
                     if (text != "../") {
-                      $('.infofiles').append('<a href="https://info.goeschess.xyz/2025-01-31/' + href + '">' + text + '</a><br />');
+                      $('.infofiles').append('<a href="https://info.glenoakchess.org/2025-01-31/' + href + '">' + text + '</a><br />');
                     }
                   });
                 }
