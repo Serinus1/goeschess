@@ -111,7 +111,7 @@
                     const href = $(this).attr('href');
                     const text = $(this).text().replace(".html", "");
                     if (text != "../") {
-                      $('.infofiles').append(url + href + '">' + text + '</a><br />');
+                      $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
                     }
                   });
                 }
