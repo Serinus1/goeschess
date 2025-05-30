@@ -29,23 +29,23 @@
     <h1>Bughouse Event? - Date Unknown</h1>
     <h3>Standings & Pairings</h3>
     <div class="infofiles">
-      <script>
-        $(document).ready(function() {
-          $.ajax({
-            url: 'https://info.glenoakchess.org/newevent/',
-            success: function(html) {
-              $(html).find('a').each(function() {
-                const href = $(this).attr('href');
-                const text = $(this).text();
-                if (text != "../")
-                {
-                  $('.infofiles').append('<a href="https://info.glenoakchess.org/newevent/' + href + '">' + text + '</a><br />');
-                }
-              });
-            }
+        <script>
+          $(document).ready(function() {
+            var url = 'https://info.glenoakchess.org/newevent/';
+            $.ajax({
+              url: url,
+              success: function(html) {
+                $(html).find('a').each(function() {
+                  const href = $(this).attr('href');
+                  const text = $(this).text().replace(".html", "");
+                  if (text != "../") {
+                    $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
+                  }
+                });
+              }
+            });
           });
-        });
-      </script>
+        </script>
     </div>
   </body>
 </html>
