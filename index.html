@@ -92,14 +92,15 @@
         <div class="infofiles">
           <script>
             $(document).ready(function() {
+              var url = 'https://info.glenoakchess.org/newevent/';
               $.ajax({
-                url: 'https://info.glenoakchess.org/newevent/',
+                url: url,
                 success: function(html) {
                   $(html).find('a').each(function() {
                     const href = $(this).attr('href');
                     const text = $(this).text().replace(".html", "");
                     if (text != "../") {
-                      $('.infofiles').append('<a href="https://info.glenoakchess.org/newevent/' + href + '">' + text + '</a><br />');
+                      $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
                     }
                   });
                 }
