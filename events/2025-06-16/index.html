@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GOES Chess Tournament</title>
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv="refresh" content="30">
+    <meta http-equiv='pragma' content='no-cache'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style type="text/css">
+      body {
+        font-family: 'Roboto', serif;
+        font-optical-sizing: auto;
+        background-color: #f2f2f2; /* Add a light background color */
+        margin: 0; /* Reset default margin */
+        padding: 0; /* Reset default padding */
+      }
+
+      .container {
+        max-width: 960px; /* Set a maximum width for the content */
+        margin: 0 auto; /* Center the content */
+        padding: 20px;
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* Vertically align header elements */
+        background-color: #e0e0e0; /* Add a background color to the header */
+        padding: 20px;
+      }
+
+      .header h1 {
+        margin: 0; /* Remove default margin */
+        font-size: 2.5em;
+      }
+
+      .header img {
+        height: 100px; /* Adjust image height as needed */
+        margin-left: auto; /* Push the image to the right */
+      }
+
+      .content {
+        padding: 20px;
+        background-color: #fff; /* Add a white background for content */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+        margin-top: 20px; /* Add spacing between content and header */
+      }
+
+      .infofiles a {
+        display: block; /* Make each link a block element */
+        margin-bottom: 10px; /* Add space between links */
+        color: #333; /* Darken link color */
+        text-decoration: none; /* Remove underlines from links */
+      }
+
+      .infofiles a:hover {
+        text-decoration: underline; /* Add underline on hover */
+      }
+
+      h2, h3, h4 {
+        color: #333; /* Darken heading colors */
+        margin-top: 20px; /* Add spacing between headings and content */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Glen Oak Elementary Chess</h1>
+        <img src="../../images/GlenOak_Goats_Mascot-Head.webp" />
+      </div>
+      <div class="content">
+        <h3>Monday Night Scholastic</h3>
+        <div class="subtext" style="font-size: 14px;">
+          Monday, June 16th, 2025<br />
+          <a href="https://maps.app.goo.gl/9ZraUUPCVqn7yNk98">Berlin Township Hall </a><br />
+          <a href="https://new.uschess.org/monday-night-scholastic-mini-swiss">US Chess event page.</a><br />
+        </div>
+        <p>Self check-in begins at 5:30.  Announcements at 5:45  Round 1 begins at 6:00.  Three round rated mini-Swiss..</p>
+        <p><a href="images/organizer.png">Contact Info</a></p>
+      </div>
+      <div class="content">
+        <h3>Final Standings</h3>
+        <div class="infofiles">
+          <script>
+            $(document).ready(function() {
+              var url = 'https://info.glenoakchess.org/2025-06-16/';
+              $.ajax({
+                url: url,
+                success: function(html) {
+                  $(html).find('a').each(function() {
+                    const href = $(this).attr('href');
+                    const text = $(this).text().replace(".html", "");
+                    if (text != "../") {
+                      $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
+                    }
+                  });
+                }
+              });
+            });
+          </script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
