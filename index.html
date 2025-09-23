@@ -146,8 +146,10 @@
   <script>
       const apiKey = 'AIzaSyBf3SbTfeCvahOXtdWAVsevqfMUEJso680';
       const folderId = '1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu';
+      
+      const query = encodeURIComponent(`'${folderId}' in parents`);
+      const apiUrl = `https://www.googleapis.com/drive/v3/files?q=${query}&key=${apiKey}&fields=files(id,name,webViewLink,mimeType,embedLink)`;
 
-      const apiUrl = 'https://www.googleapis.com/drive/v3/files?q=' + query + '&key=' + apiKey + '&fields=files(id,name,mimeType,embedLink)';
 
       const fileListContainer = document.getElementById('drive-files');
 
