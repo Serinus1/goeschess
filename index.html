@@ -65,9 +65,6 @@
         color: #333; /* Darken heading colors */
         margin-top: 20px; /* Add spacing between headings and content */
       }
-      .file-container { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
-      .file-container a { text-decoration: none; font-weight: bold; }
-      .file-container iframe { width: 100%; height: 400px; border: none; margin-top: 10px;}
     </style>
   </head>
   <body>
@@ -115,7 +112,7 @@
       <div class="content">
         <h3>Past Events</h3>
         <ul>
-          
+          <li>Qamaria Cup (Unrated Tournament) - Monday, September 22nd 2025 - Congratulations Joy!</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, September 15th, 2025</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, September 8th, 2025</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, August 25th, 2025</li>
@@ -142,53 +139,5 @@
         </ul>
       </div>
     </div>
-
-
-  <script>
-      const apiKey = 'AIzaSyBf3SbTfeCvahOXtdWAVsevqfMUEJso680';
-      const folderId = '1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu';
-
-      const fileListContainer = document.getElementById('drive-files');
-
-      // Construct the API URL to list files in the specified folder
-      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents&key=${apiKey}&fields=files(id,name,webViewLink,webContentLink,mimeType)`;
-
-      fetch(apiUrl)
-          .then(response => response.json())
-          .then(data => {
-              fileListContainer.innerHTML = ''; // Clear the "Loading..." message
-
-              if (data.files && data.files.length > 0) {
-                  data.files.forEach(file => {
-                      const fileDiv = document.createElement('div');
-                      fileDiv.className = 'file-container';
-
-                      let displayName = file.name;
-                      if (displayName.endsWith('.htm') || displayName.endsWith('.html')) {
-                        displayName = displayName.substring(0, displayName.lastIndexOf('.'));
-                      }
-
-                      let linkHtml = '';
-                      if (file.webViewLink) {
-                          linkHtml = `<a href="${file.webViewLink}" target="_blank">${displayName}</a>`;
-                      } else {
-                          linkHtml = `<p>${displayName} (Direct link not available)</p>`;
-                      }
-
-
-                      fileDiv.innerHTML = `
-                          ${linkHtml}
-                      `;
-                      fileListContainer.appendChild(fileDiv);
-                  });
-              } else {
-                  fileListContainer.innerHTML = '<p>No files found in this folder or there was an error.</p>';
-              }
-          })
-          .catch(error => {
-              console.error('Error fetching files:', error);
-              fileListContainer.innerHTML = '<p>Failed to load files. Please check the console for more details.</p>';
-          });
-  </script>
   </body>
 </html>
