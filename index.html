@@ -143,15 +143,15 @@
       </div>
     </div>
 
+
   <script>
       const apiKey = 'AIzaSyBf3SbTfeCvahOXtdWAVsevqfMUEJso680';
       const folderId = '1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu';
-      
-      const query = encodeURIComponent(`'${folderId}' in parents`);
-      const apiUrl = `https://www.googleapis.com/drive/v3/files?q=${query}&key=${apiKey}&fields=files(id,name,webViewLink,mimeType,embedLink)`;
-
 
       const fileListContainer = document.getElementById('drive-files');
+
+      // Construct the API URL to list files in the specified folder
+      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}' in parents&key=${apiKey}&fields=files(id,name,webViewLink,webContentLink,mimeType)`;
 
       fetch(apiUrl)
           .then(response => response.json())
@@ -162,17 +162,29 @@
                   data.files.forEach(file => {
                       const fileDiv = document.createElement('div');
                       fileDiv.className = 'file-container';
-                      
+
                       let embedHtml = '';
-                      // For Google Docs, Sheets, PDFs, Videos, etc., use an iframe with the embedLink
-                      if (file.embedLink) {
-                          embedHtml = `<iframe src="${file.embedLink}"></iframe>`;
+                      // Use webViewLink to provide a link to the file.
+                      // For direct embedding, you often need a different approach,
+                      // as direct embedding of all file types is not universally supported.
+                      // This example provides a link to view the file.
+                      if (file.webViewLink) {
+                          embedHtml = `<p><a href="${file.webViewLink}" target="_blank">View ${file.name}</a></p>`;
+
+                          // Example for embedding a public image
+                          if (file.mimeType.startsWith('image/')) {
+                               // For public images, you can sometimes use the webContentLink
+                               // but it's often better to make the file public and use the ID in a standard image tag.
+                               // Note: This requires the image to be publicly accessible.
+                               embedHtml += `<img src="https://lh3.googleusercontent.com/d/${file.id}" style="width:100%; height:auto;">`;
+                          }
                       } else {
-                          embedHtml = `<p>This file type cannot be embedded directly. <a href="${file.webViewLink}" target="_blank">View on Google Drive</a></p>`;
+                          embedHtml = `<p>${file.name} (Direct link not available)</p>`;
                       }
 
+
                       fileDiv.innerHTML = `
-                          <a href="${file.webViewLink}" target="_blank">${file.name}</a>
+                          <h3>${file.name}</h3>
                           ${embedHtml}
                       `;
                       fileListContainer.appendChild(fileDiv);
@@ -183,7 +195,7 @@
           })
           .catch(error => {
               console.error('Error fetching files:', error);
-              fileListContainer.innerHTML = '<p>Failed to load files. Check the console for errors.</p>';
+              fileListContainer.innerHTML = '<p>Failed to load files. Please check the console for more details.</p>';
           });
   </script>
   </body>
