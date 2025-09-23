@@ -163,29 +163,21 @@
                       const fileDiv = document.createElement('div');
                       fileDiv.className = 'file-container';
 
-                      let embedHtml = '';
-                      // Use webViewLink to provide a link to the file.
-                      // For direct embedding, you often need a different approach,
-                      // as direct embedding of all file types is not universally supported.
-                      // This example provides a link to view the file.
-                      if (file.webViewLink) {
-                          embedHtml = `<p><a href="${file.webViewLink}" target="_blank">View ${file.name}</a></p>`;
+                      let displayName = file.name;
+                      if (displayName.endsWith('.htm') || displayName.endsWith('.html')) {
+                        displayName = displayName.substring(0, displayName.lastIndexOf('.'));
+                      }
 
-                          // Example for embedding a public image
-                          if (file.mimeType.startsWith('image/')) {
-                               // For public images, you can sometimes use the webContentLink
-                               // but it's often better to make the file public and use the ID in a standard image tag.
-                               // Note: This requires the image to be publicly accessible.
-                               embedHtml += `<img src="https://lh3.googleusercontent.com/d/${file.id}" style="width:100%; height:auto;">`;
-                          }
+                      let linkHtml = '';
+                      if (file.webViewLink) {
+                          linkHtml = `<a href="${file.webViewLink}" target="_blank">${displayName}</a>`;
                       } else {
-                          embedHtml = `<p>${file.name} (Direct link not available)</p>`;
+                          linkHtml = `<p>${displayName} (Direct link not available)</p>`;
                       }
 
 
                       fileDiv.innerHTML = `
-                          <h3>${file.name}</h3>
-                          ${embedHtml}
+                          ${linkHtml}
                       `;
                       fileListContainer.appendChild(fileDiv);
                   });
