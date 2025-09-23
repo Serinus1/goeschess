@@ -65,7 +65,51 @@
         color: #333; /* Darken heading colors */
         margin-top: 20px; /* Add spacing between headings and content */
       }
+      .file-container { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+      .file-container a { text-decoration: none; font-weight: bold; }
+      .file-container iframe { width: 100%; height: 400px; border: none; margin-top: 10px;}
     </style>
+      <script>
+      const apiKey = 'AIzaSyBFaaoospygt_lQqLS-bnXX9GIqb5Q11Nw';
+      const folderId = '1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu';
+
+      const apiUrl = `https://www.googleapis.com/drive/v3/files?q='${folderId}'+in+parents&key=${apiKey}&fields=files(id,name,mimeType,embedLink)`;
+
+      const fileListContainer = document.getElementById('drive-files');
+
+      fetch(apiUrl)
+          .then(response => response.json())
+          .then(data => {
+              fileListContainer.innerHTML = ''; // Clear the "Loading..." message
+
+              if (data.files && data.files.length > 0) {
+                  data.files.forEach(file => {
+                      const fileDiv = document.createElement('div');
+                      fileDiv.className = 'file-container';
+                      
+                      let embedHtml = '';
+                      // For Google Docs, Sheets, PDFs, Videos, etc., use an iframe with the embedLink
+                      if (file.embedLink) {
+                          embedHtml = `<iframe src="${file.embedLink}"></iframe>`;
+                      } else {
+                          embedHtml = `<p>This file type cannot be embedded directly. <a href="${file.webViewLink}" target="_blank">View on Google Drive</a></p>`;
+                      }
+
+                      fileDiv.innerHTML = `
+                          <a href="${file.webViewLink}" target="_blank">${file.name}</a>
+                          ${embedHtml}
+                      `;
+                      fileListContainer.appendChild(fileDiv);
+                  });
+              } else {
+                  fileListContainer.innerHTML = '<p>No files found in this folder or there was an error.</p>';
+              }
+          })
+          .catch(error => {
+              console.error('Error fetching files:', error);
+              fileListContainer.innerHTML = '<p>Failed to load files. Check the console for errors.</p>';
+          });
+  </script>
   </head>
   <body>
     <div class="container">
@@ -75,7 +119,7 @@
       <div class="content">
         <h2>Events</h2>
         <h3>Monday, September 22nd 2025 - Qamaria Unrated Tournament</h3>
-        <h4><a href="https://glenoakchess.org/qamaria.html">Starts 5:30pm at Qamaria Coffee. Details here. Registration is closed.</a></h4>
+        <h4>Congratulations Joy on winning first place with 4 wins in 4 games!</h4>
         <br />
         <h3>Saturday, October 25th - Glen Oak Fall Scholastic</h3>
         <p>Glen Oak Chess Club welcomes you for a fun environment that has something for everyone! <a href="https://new.uschess.org/form/first-time-member-new-player-">USCF Membership</a> is encouraged and required for the rated sections.</p>
@@ -87,6 +131,7 @@
       </div>
       <div class="content">
         <h3>Standings & Pairings</h3>
+        <div id="drive-files">Loading files...</div>
         <div class="infofiles">
           <script>
             $(document).ready(function() {
@@ -105,6 +150,7 @@
               });
             });
           </script>
+
         </div>
       </div>
       <div class="content">
