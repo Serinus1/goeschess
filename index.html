@@ -74,7 +74,7 @@
       </div>
       <div class="content">
         <h2>Events</h2>
-        <h3>Monday, September 29th 2025 - Qamaria Casual</h3>
+        <h3>Monday, October 6th 2025 - Qamaria Casual</h3>
         <h4>Attendance might be light due to an overlapping school event. We'll still have some presence Monday.</h4>
         <h4>Congratulations Joy on winning first place last week with 4 wins in 4 games!</h4>
         <br />
@@ -112,32 +112,48 @@
       <div class="content">
         <h3>Past Events</h3>
         <ul>
+          <li>Casual Chess Night at Qamaria Coffee - Monday, September 29th, 2025</li>
           <li>Qamaria Cup (Unrated Tournament) - Monday, September 22nd 2025 - Congratulations Joy!</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, September 15th, 2025</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, September 8th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, August 25th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, August 18th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, August 11th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, August 4th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, July 28th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, July 21st, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, July 14th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, July 7th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, July 1st, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, June 30th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, June 23rd, 2025</li>
-          <li><a href="events/2025-06-16/">Monday Night Scholastic</a> - June 16th, 2025</li>
-          <li>Olentangy Summer Chess Camp - June 16-20 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_6EKNQgAIZN-nn9pe7gMExn9GnKCHCSkTiFzEjm62LlQT7Q/viewform">details here.</a></li>
-          <li>Glen Oak - Friday, May 2nd, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, June 9th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, June 2nd, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, May 19th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, May 12th, 2025</li>
-          <li>Casual Chess Night at Qamaria Coffee - Monday, May 5th, 2025</li>
-          <li><a href="events/2025-01-31/">Friday Night Scholastic - January 31st, 2025</a></li>
-          <li><a href="events/2024-10-16/">Glen Oak Fall Scholastic - November 16th, 2024</a></li>
         </ul>
+        <div id="more-events" style="display: none;">
+          <ul>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, August 25th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, August 18th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, August 11th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, August 4th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, July 28th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, July 21st, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, July 14th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, July 7th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, July 1st, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, June 30th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, June 23rd, 2025</li>
+            <li><a href="events/2025-06-16/">Monday Night Scholastic</a> - June 16th, 2025</li>
+            <li>Olentangy Summer Chess Camp - June 16-20 <a href="https://docs.google.com/forms/d/e/1FAIpQLSc_6EKNQgAIZN-nn9pe7gMExn9GnKCHCSkTiFzEjm62LlQT7Q/viewform">details here.</a></li>
+            <li>Glen Oak - Friday, May 2nd, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, June 9th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, June 2nd, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, May 19th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, May 12th, 2025</li>
+            <li>Casual Chess Night at Qamaria Coffee - Monday, May 5th, 2025</li>
+            <li><a href="events/2025-01-31/">Friday Night Scholastic - January 31st, 2025</a></li>
+            <li><a href="events/2024-10-16/">Glen Oak Fall Scholastic - November 16th, 2024</a></li>
+          </ul>
+        </div>
+        <a href="#" id="toggle-past-events" style="cursor: pointer; text-decoration: underline; color: #333; margin-top: 10px; display: inline-block;">More...</a>
       </div>
     </div>
+    <script>
+      $(document).ready(function() {
+        $('#toggle-past-events').click(function(e) {
+          e.preventDefault();
+          $('#more-events').slideToggle('fast');
+          var text = $(this).text();
+          $(this).text(text == "More..." ? "Less..." : "More...");
+        });
+      });
+    </script>
   </body>
 </html>
