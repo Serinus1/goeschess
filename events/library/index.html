@@ -1,7 +1,7 @@
 <html>
    <head>
-    <meta http-equiv='cache-control' content='no-cache'> 
-    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='cache-control' content='no-cache'>
+    <meta http-equiv='expires' content='0'>
     <meta http-equiv="refresh" content="30">
     <meta http-equiv='pragma' content='no-cache'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -64,10 +64,15 @@
         margin-top: 20px; /* Add spacing between headings and content */
       }
 
-      #qr-code {
+      #qr-container {
         position: fixed;
         bottom: 20px;
         right: 20px;
+        width: 150px;
+        text-align: center;
+      }
+
+      #qr-code {
         width: 150px;
         height: 150px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
@@ -100,7 +105,9 @@
 
     </div>
     </div>
-    <div style="font-size: smaller;"><a href="https://drive.google.com/drive/folders/1KeOMljV7x0qZKugUIxMWu2THwwQMe3AA?usp=sharing">Add files...</a></div>;
-    <img id="qr-code" src="library-event-qr-code.png" alt="QR Code for tournament information">
+    <div id="qr-container">
+      <img id="qr-code" src="library-event-qr-code.png" alt="QR Code for tournament information">
+      <div style="font-size: smaller;"><a href="https://drive.google.com/drive/folders/1KeOMljV7x0qZKugUIxMWu2THwwQMe3AA?usp=sharing">Add files...</a></div>
+    </div>
 
 </body></html>
