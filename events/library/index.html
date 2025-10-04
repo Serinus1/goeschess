@@ -1,4 +1,4 @@
- <html>
+<html>
    <head>
     <meta http-equiv='cache-control' content='no-cache'> 
     <meta http-equiv='expires' content='0'> 
@@ -63,6 +63,15 @@
         color: #333; /* Darken heading colors */
         margin-top: 20px; /* Add spacing between headings and content */
       }
+
+      #qr-code {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 150px;
+        height: 150px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      }
     </style>
   </head>   
  <title>Columbus Library Tournament - October 4th, 2025</title></head>
@@ -91,4 +100,7 @@
 
     </div>
     </div>
+
+    <img id="qr-code" src="library-event-qr-code.png" alt="QR Code for tournament information">
+
 </body></html>
