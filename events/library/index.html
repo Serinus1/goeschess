@@ -1,0 +1,27 @@
+ <html><head><title>Columbus Library Tournament - October 4th, 2025</title></head>
+ <body>
+<h1>Columbus Library Tournament - October 4th, 2025</h1>
+ <div class="content">
+    <h3>Standings & Pairings</h3>
+    <div class="infofiles">
+        <script>
+        $(document).ready(function() {
+            var url = 'https://info.glenoakchess.org/events/libraryevent/';
+            $.ajax({
+            url: url,
+            success: function(html) {
+                $(html).find('a').each(function() {
+                const href = $(this).attr('href');
+                const text = $(this).text().replace(".html", "");
+                if (text != "../") {
+                    $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
+                }
+                });
+            }
+            });
+        });
+        </script>
+
+    </div>
+    </div>
+</body></html>
