@@ -1,0 +1,49 @@
+[Event "Import"]
+[Site "https://lichess.org/ARapDM6w"]
+[Date "2025.01.01"]
+[White "Mackensie"]
+[Black "Dustin"]
+[Result "0-1"]
+[UTCDate "2024.12.31"]
+[UTCTime "00:00:00"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "C44"]
+[Opening "King's Knight Opening: Normal Variation"]
+[Termination "Normal"]
+[Annotator "JA"]
+
+
+1. e4 e5 
+2. Nf3 Nc6 { C44 King's Knight Opening: Normal Variation } 
+3. d3 Bb4+ 
+4. Ke2 Nf6 
+5. g3 O-O 
+6. Na3 Bxa3 
+7. bxa3 d6 
+8. d4 Bg4 
+9. dxe5 dxe5 
+10. h3 Nd4+ 
+11. Ke1 Nxf3+ 
+12. Ke2 Nd4+ 
+13. Ke3 Bxd1 
+14. Bb2 Ng4+ 
+15. Kd3 Nb5+ 
+16. Kc4 Nd6+ 
+17. Kb4 Nxe4 
+18. hxg4 Qe7+ 
+19. Kc4 Nd6+ 
+20. Kd5 Bf3+ 
+21. Kc5 Bxh1 
+22. Bc3 Ne4+ 
+23. Kd5 Nxc3+ 
+24. Kc4 Bd5+ 
+25. Kd3 Nxa2 
+26. f4 Qxa3+ 
+27. Kd2 Rad8 
+28. fxe5 Bc4+ 
+29. Ke1 Qe3+ 
+30. Be2 Qxe2# { Black wins by checkmate. } 
+0-1

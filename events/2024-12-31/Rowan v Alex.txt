@@ -1,0 +1,42 @@
+[Event "Olentangy Chess Enrichment"]
+[Site "https://lichess.org/yCcdW5si"]
+[Date "2024.12.31"]
+[White "Rowan"]
+[Black "Alex"]
+[Result "*"]
+[UTCDate "2024.12.31"]
+[UTCTime "21:09:05"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[Opening "Kádas Opening"]
+[ECO "B00"]
+[Annotator "JA"]
+
+1. h4 { A00 Kádas Opening } e5 
+2. Rh3 e4 
+3. e3 Qf6 
+4. Nf3 exf3 
+5. gxf3 d5 
+6. Bb5+ c6 
+7. Bf1 Bxh3 
+8. Bxh3 Qxh4 
+9. Bf1 Nd7 
+10. b4 Qf6 
+11. Nc3 a5 
+12. Rb1 O-O-O 
+13. Rb3 axb4 
+14. Bh3 d4 
+15. Ne2 dxe3 
+16. Rd3 exd2+ 
+17. Bxd2 Qh4 
+18. Rxd7 Rxd7 
+19. Bc3 bxc3 
+20. Qxd7+ Kb8 
+21. Qd1 Qxh3 
+22. Nd4 Bc5 
+23. Nxc6+ bxc6 
+24. a3 Qg2 {this a3 sure looks like it's written bxc3 }
+25. Qb1+ Kc8 
+26. Qd1 Qxf2# { Black wins by checkmate. } 0-1

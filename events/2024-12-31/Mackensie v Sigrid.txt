@@ -1,0 +1,30 @@
+[Event "Olentangy Chess Enrichment"]
+[Site "https://lichess.org/O4jSiet7"]
+[Date "2024.12.31"]
+[White "Mackensie"]
+[Black "Sigrid"]
+[Result "*"]
+[UTCDate "2024.12.31"]
+[UTCTime "21:09:05"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "B00"]
+[Annotator "JA"]
+
+
+
+
+
+
+e4 e5
+Nf3 Nc6
+Ne5 Nxe5
+f4 c5
+fxe5 c4
+d3 cxd3
+cxd3 h6
+h4 Nf6
+exf6 Qa5+
+f8=Q Kxf8
