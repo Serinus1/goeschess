@@ -39,8 +39,8 @@
       }
 
       .header img {
-        max-width: 100px;
-        max-height: 100px;
+        max-width: 80px;
+        max-height: 80px;
         margin-left: auto; /* Push the image to the right */
         cursor: pointer;
       }
@@ -72,8 +72,9 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1>Glen Oak Chess Club</h1>
-        <a href="/qr/"><img src="/images/qr.png" alt="QR Code" /></a>
+         <div style="float:left; min-width: 80%;"><h1>Glen Oak Chess Club</h1></div>
+         <div style="float:right; margin-left:auto;"><a href="/qr/"><img src="/images/qr.png" alt="QR Code" /></a></div>
+         <div style="clear:both;"></div>
       </div>
       <div class="content">
         <h2>Events</h2>
@@ -101,7 +102,7 @@
                     }
                   });
                   if (!filesFound) {
-                    $('.infofiles').append("<p>No event in progress. <span style='font-size:smaller;'><a href='https://drive.google.com/drive/u/1/folders/1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu'>Add files...</a></p>");
+                    $('.infofiles').append("<p>No event in progress. <span style='font-size:smallest;'><a href='https://drive.google.com/drive/u/1/folders/1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu'>Add files...</a></p>");
                   }
                 }
               });
