@@ -39,8 +39,10 @@
       }
 
       .header img {
-        height: 100px; /* Adjust image height as needed */
+        max-width: 100px;
+        max-height: 100px;
         margin-left: auto; /* Push the image to the right */
+        cursor: pointer;
       }
 
       .content {
@@ -71,6 +73,7 @@
     <div class="container">
       <div class="header">
         <h1>Glen Oak Chess Club</h1>
+        <a href="/qr/"><img src="/images/qr.png" alt="QR Code" /></a>
       </div>
       <div class="content">
         <h2>Events</h2>
@@ -88,13 +91,18 @@
               $.ajax({
                 url: url,
                 success: function(html) {
+                  var filesFound = false;
                   $(html).find('a').each(function() {
                     const href = $(this).attr('href');
                     const text = $(this).text().replace(".html", "");
                     if (text != "../") {
                       $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
+                      filesFound = true;
                     }
                   });
+                  if (!filesFound) {
+                    $('.infofiles').append("<p>No event in progress. <span style='font-size:smaller;'><a href='https://drive.google.com/drive/u/1/folders/1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu'>Add files...</a></p>");
+                  }
                 }
               });
             });
@@ -103,7 +111,8 @@
         </div>
       </div>
       <div class="content">
-        <h3>Final Results from <a href="/events/2025-10-25/">Glen Oak Fall Scholastic</a> - Saturday, October 25th - Congratulations Violet, Pranav, Aishwarya, and Jenil!</h3>
+        <h3>Final Results</h3>
+          from <a href="/events/2025-10-25/">Glen Oak Fall Scholastic</a> - Saturday, October 25th - Congratulations Violet, Pranav, Aishwarya, and Jenil!</h3>
       </div>
       <div class="content">
         <h3>Past Events</h3>
