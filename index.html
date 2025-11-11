@@ -39,8 +39,10 @@
       }
 
       .header img {
-        height: 100px; /* Adjust image height as needed */
+        max-width: 100px;
+        max-height: 100px;
         margin-left: auto; /* Push the image to the right */
+        cursor: pointer;
       }
 
       .content {
@@ -71,21 +73,17 @@
     <div class="container">
       <div class="header">
         <h1>Glen Oak Chess Club</h1>
+        <a href="/qr/"><img src="/images/qr.png" alt="QR Code" /></a>
       </div>
       <div class="content">
         <h2>Events</h2>
-        <h3>Monday, November 10th 2025 - Qamaria Casual</h3>
-        <h4><a href="https://glenoakchess.org/qamaria.html">Starts 5:30pm at Qamaria Coffee. Details here.</a></h4>
-        <p><a href="images/organizer.png">Direct Contact Info</a></p>
-        <p><a href="https://info.glenoakchess.org/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
-        <br />
         <h3>Monday, November 17th 2025 - Qamaria Casual</h3>
         <h4><a href="https://glenoakchess.org/qamaria.html">Starts 5:30pm at Qamaria Coffee. Details here.</a></h4>
         <p><a href="images/organizer.png">Direct Contact Info</a></p>
         <p><a href="https://info.glenoakchess.org/2024-12-31/01 - Parent Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
       </div>
-      <div class="content">
-        <h3>Standings & Pairings from Glen Oak Fall Scholastic - October 25th</h3>
+      <div class="content" id="divStandings">
+        <h3>Standings & Pairings</h3>
         <div class="infofiles">
           <script>
             $(document).ready(function() {
@@ -93,13 +91,18 @@
               $.ajax({
                 url: url,
                 success: function(html) {
+                  var filesFound = false;
                   $(html).find('a').each(function() {
                     const href = $(this).attr('href');
                     const text = $(this).text().replace(".html", "");
                     if (text != "../") {
                       $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
+                      filesFound = true;
                     }
                   });
+                  if (!filesFound) {
+                    $('.infofiles').append("<p>No event in progress. <span style='font-size:smaller;'><a href='https://drive.google.com/drive/u/1/folders/1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu'>Add files...</a></p>");
+                  }
                 }
               });
             });
@@ -108,12 +111,16 @@
         </div>
       </div>
       <div class="content">
+        <h3>Final Results</h3>
+          from <a href="/events/2025-10-25/">Glen Oak Fall Scholastic</a> - Saturday, October 25th - Congratulations Violet, Pranav, Aishwarya, and Jenil!</h3>
+      </div>
+      <div class="content">
         <h3>Past Events</h3>
         <ul>
           <li>Casual Chess Night at Qamaria Coffee - Monday, November 10th, 2025</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, November 3rd, 2025</li>
           <li>Casual Chess Night at Qamaria Coffee - Monday, October 27th, 2025</li>
-          <li>Glen Oak Fall Scholastic - Saturday, October 25th - Congratulations Violet, Pranav, Aishwarya, and Jenil!</li>
+          <li><a href="/events/2025-10-25/">Glen Oak Fall Scholastic</a> - Saturday, October 25th - Congratulations Violet, Pranav, Aishwarya, and Jenil!</li>
         </ul>
         <div id="more-events" style="display: none;">
           <ul>
@@ -121,7 +128,7 @@
             <li>Casual Chess Night at Qamaria Coffee - Monday, October 13th, 2025</li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, October 6th, 2025</li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, September 29th, 2025</li>
-            <li>Qamaria Cup (Unrated Tournament) - Monday, September 22nd 2025 - Congratulations Joy!</li>
+            <li>Qamaria Cup (Unrated Tournament) - Monday, September 22nd 2025 - <a href="/events/2025-09-22/Qamaria Cup Final Standings.html">Congratulations Joy!</a></li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, September 15th, 2025</li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, September 8th, 2025</li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, August 25th, 2025</li>
@@ -144,7 +151,7 @@
             <li>Casual Chess Night at Qamaria Coffee - Monday, May 12th, 2025</li>
             <li>Casual Chess Night at Qamaria Coffee - Monday, May 5th, 2025</li>
             <li><a href="events/2025-01-31/">Friday Night Scholastic - January 31st, 2025</a></li>
-            <li><a href="events/2024-10-16/">Glen Oak Fall Scholastic - November 16th, 2024</a></li>
+            <li><a href="events/2024-11-16/">Glen Oak Fall Scholastic - November 16th, 2024</a></li>
           </ul>
         </div>
         <a href="#" id="toggle-past-events" style="cursor: pointer; text-decoration: underline; color: #333; margin-top: 10px; display: inline-block;">More...</a>

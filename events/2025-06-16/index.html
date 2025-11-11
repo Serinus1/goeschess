@@ -84,24 +84,10 @@
       </div>
       <div class="content">
         <h3>Final Standings</h3>
-        <div class="infofiles">
-          <script>
-            $(document).ready(function() {
-              var url = 'https://info.glenoakchess.org/2025-06-16/';
-              $.ajax({
-                url: url,
-                success: function(html) {
-                  $(html).find('a').each(function() {
-                    const href = $(this).attr('href');
-                    const text = $(this).text().replace(".html", "");
-                    if (text != "../") {
-                      $('.infofiles').append("<a href=\"" + url + href + '">' + text + '</a><br />');
-                    }
-                  });
-                }
-              });
-            });
-          </script>
+        <div class="standings">
+          <a href="/events/2025-06-16/Section 1 Standings Rd 3.html">Section 1</a>
+          <a href="/events/2025-06-16/Section 2 Standings Rd 3.html">Section 2</a>
+          <a href="/events/2025-06-16/Section 3 Standings Rd 3.html">Section 3</a>
         </div>
       </div>
     </div>
