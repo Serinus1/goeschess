@@ -1,0 +1,36 @@
+[Event "Olentangy Chess Enrichment"]
+[Site "https://lichess.org"]
+[Date "2024.12.31"]
+[White "Anson"]
+[Black "Dex"]
+[Result "*"]
+[UTCDate "2024.12.31"]
+[UTCTime "21:09:05"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "B00"]
+[Opening "Scandinavian Defense"]
+[Annotator "JA"]
+
+1. e4 d5 { B01 Scandinavian Defense } 
+2. exd5 Na6 
+3. Nf3 Bf5 
+4. Ng5 f6 
+5. a4 fxg5 
+6. Bxa6 bxa6 
+7. O-O Qxd5 
+8. h4 O-O-O 
+9. Re1 e5 
+10. g4 Kb8 *
+
+{ Kh1 isn't a legal move! 
+Kh1 e4
+gxf5 Qxf5 
+d4 Rb1
+d5 e3
+fxe3 c5
+d6 c4
+d7 Nf6
+}

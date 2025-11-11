@@ -1,0 +1,29 @@
+[Event "Olentangy Chess Enrichment"]
+[Site "https://lichess.org/"]
+[Date "2024.12.30"]
+[White "Brody"]
+[Black "Riyana"]
+[Result "*"]
+[UTCDate "2024.12.30"]
+[UTCTime "21:09:05"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "B00"]
+[Annotator "JA"]
+
+
+
+
+
+
+e4 e5
+f3 Nc6
+d3 Be7
+b3 bxe4
+Kd2 Qg5+
+Kc3 b5
+Bxg5 Bxg5
+f4 xf4
+a4 Bd4

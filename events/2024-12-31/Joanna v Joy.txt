@@ -1,0 +1,43 @@
+[Event "Import"]
+[Site "https://lichess.org/IMZatotT"]
+[Date "2024.12.30"]
+[White "Joanna"]
+[Black "Joy"]
+[Result "0-1"]
+[UTCDate "2024.12.30"]
+[UTCTime "15:38:30"]
+[WhiteElo "?"]
+[BlackElo "?"]
+[Variant "Standard"]
+[TimeControl "-"]
+[ECO "B01"]
+[Opening "Scandinavian Defense: Mieses-Kotroc Variation"]
+[Termination "Normal"]
+[Annotator "JA"]
+
+1. e4 d5 
+2. exd5 Qxd5 { B01 Scandinavian Defense: Mieses-Kotroc Variation } 
+3. c4?! { (0.56 → -0.34) Inaccuracy. Nc3 was best. } (
+3. Nc3 Qd6 
+4. d4 Nf6 
+5. Nf3 c6 
+6. Ne5 g6 
+7. Bf4 Nh5) 3... Qe6+?! { (-0.34 → 0.58) Inaccuracy. Qe4+ was best. } (3... Qe4+ 4. Ne2 Qxc4 5. d4 Nf6 6. Nbc3 e6 7. Ng3 Qb4 8. a3) 
+4. Be2 Nf6 
+5. h4?! { (0.92 → 0.01) Inaccuracy. d4 was best. } (
+5. d4 b6 
+6. Nc3 Bb7 
+7. d5 Qc8 
+8. Bg5 h6 
+9. Bh4 g6) 5... Ng4?! { (0.01 → 0.87) Inaccuracy. Qd7 was best. } (5... Qd7 
+6. Nf3) 
+6. f3 Ne5?? { (0.43 → 2.22) Blunder. Nh6 was best. } (6... Nh6 
+7. Nc3) 
+7. Bf1?? { (2.22 → Mate in 1) Checkmate is now unavoidable. d4 was best. } (
+7. d4 Ned7 
+8. Nc3 Qg6 
+9. Kf1 c6 
+10. h5 Qd6 
+11. f4 h6 
+12. Nf3 e6) 7
+... Nd3# { Black wins by checkmate. } 0-1
