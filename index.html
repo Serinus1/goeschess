@@ -6,91 +6,91 @@
     <meta http-equiv='expires' content='0'> 
     <meta http-equiv="refresh" content="30">
     <meta http-equiv='pragma' content='no-cache'>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
     <style type="text/css">
+      :root{
+        --bg:#f7fafc;
+        --card:#ffffff;
+        --accent:#2b6cb0;
+        --muted:#6b7280;
+        --max-width:1100px;
+      }
+      html,body{height:100%;}
       body {
-        font-family: 'Roboto', serif;
-        font-optical-sizing: auto;
-        background-color: #f2f2f2; /* Add a light background color */
-        margin: 0; /* Reset default margin */
-        padding: 0; /* Reset default padding */
-      }
-
-      .container {
-        max-width: 960px; /* Set a maximum width for the content */
-        margin: 0 auto; /* Center the content */
-        padding: 20px;
-      }
-
-      .header {
-        display: flex;
-        align-items: center; /* Vertically align header elements */
-        background-color: #e0e0e0; /* Add a background color to the header */
-        padding: 20px;
-      }
-
-      .header h1 {
+        font-family: 'Roboto', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+        background: linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
         margin: 0;
-        width:70%;
-        font-size: 2.5em;
+        color: #0f172a;
+        -webkit-font-smoothing:antialiased;
+        -moz-osx-font-smoothing:grayscale;
       }
-
-      .header img {
-        max-width: 80px;
-        max-height: 80px;
-        margin-left: auto; /* Push the image to the right */
-        cursor: pointer;
+      .container{
+        max-width:var(--max-width);
+        margin:0 auto;
+        padding:28px 20px;
       }
-
-      .content {
-        padding: 20px;
-        background-color: #fff; /* Add a white background for content */
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
-        margin-top: 20px; /* Add spacing between content and header */
+      .site-header{
+        display:flex;
+        align-items:center;
+        gap:16px;
       }
-
-      .infofiles a {
-        display: block; /* Make each link a block element */
-        margin-bottom: 10px; /* Add space between links */
-        /* color: #333;  Darken link color */
-        text-decoration: none; /* Remove underlines from links */
+      .logo{
+        display:flex;
+        align-items:center;
+        gap:12px;
       }
-
-      .infofiles a:hover {
-        text-decoration: underline; /* Add underline on hover */
+      .logo img{width:72px;height:72px;border-radius:8px;object-fit:cover}
+      .site-title{font-size:1.6rem;font-weight:700;margin:0}
+      .site-sub{color:var(--muted);font-size:0.95rem;margin:0}
+      nav{margin-left:auto}
+      nav a{color:var(--accent);text-decoration:none;margin-left:16px;font-weight:600}
+      .hero{
+        margin-top:18px;
+        padding:20px;
+        background: linear-gradient(90deg, rgba(43,108,176,0.06), rgba(43,108,176,0.02));
+        border-radius:10px;
+        display:flex;flex-direction:column;gap:8px
       }
-
-      h2, h3, h4 {
-        color: #333; /* Darken heading colors */
-        margin-top: 20px; /* Add spacing between headings and content */
-      }
+      .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+      @media(min-width:860px){.grid{grid-template-columns:2fr 1fr}}
+      .card{background:var(--card);padding:18px;border-radius:10px;box-shadow:0 6px 18px rgba(15,23,42,0.06)}
+      .card h2,.card h3{margin:0 0 8px 0}
+      .infofiles a{display:block;margin-bottom:8px;color:#0b3b66;text-decoration:none}
+      .infofiles a:hover{text-decoration:underline}
+      .muted{color:var(--muted);font-size:0.95rem}
+      #toggle-past-events{cursor:pointer;color:var(--accent);text-decoration:underline}
+      footer{margin-top:20px;color:var(--muted);font-size:0.9rem;text-align:center}
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="header">
-         <div style="float:left; min-width: 80%;"><h1>Glen Oak Chess Club</h1></div>
-         <div style="float:right; margin-left:auto;"><a href="/qr/"><img src="/images/qr.png" alt="QR Code" /></a></div>
-         <div style="clear:both;"></div>
-      </div>
-      <div class="content">
-        <h2>Events</h2>
-        <h3>Monday, March 2nd, 2026 - Qamaria Casual</h3>
-        <h4><a href="https://glenoakchess.org/qamaria.html">Starts 5:30pm at Qamaria Coffee. Details here.</a><span style="font-size: smaller;" >(A light blue Owala water bottle was left at Qamaria Monday.  They should have it behind the counter.)</span></h4>
-        <h3>Sunday, March 15th, 2026</h3>
-        <h4><a href="https://new.uschess.org/2026-ohio-all-girls-state-championship">2026 Ohio All-Girls State Championship</a></h4>
-        <h3>Sunday, March 1st, 2026</h3>
-        <h4><a href="https://glenoakchess.org/events/2026-03-01/">
-Glen Oak March Madness Scholastic (K-8)</a> - Congrats to our winners, Dheeraj, Advit, Aarav, Poornima, Sourya, Glen Oak Elementary, and Indian Springs Elementary!.</h4>
-        <p><a href="images/organizer.png">Direct Contact Info</a></p>
-        <p><a href="https://glenoakchess.org/events/2024-12-31/01%20-%20Parent%20Guide.odt">How to Review and Analyze Chess Games – a Parent's Guide</a></p>
-        <p>NEW! I made a little app that should make it easier to input and review notation. <a href="https://info.glenoakchess.org/otbreviewer/x64/">OTB Reviewer</a> (also an <a href="https://info.glenoakchess.org/otbreviewer/arm64/">arm64 version</a> available.)</p>
-      </div>
-      <div class="content" id="divStandings">
-        <h3>Tourament Entries, Standings & Pairings</h3>
+      <header class="site-header">
+        <div class="logo">
+          <a href="/"><img src="/images/qr.png" alt="QR Code" /></a>
+          <div>
+            <h1 class="site-title">Glen Oak Chess Club</h1>
+            <p class="site-sub">Local scholastic tournaments, casual nights, and club resources</p>
+          </div>
+        </div>
+      </header>
+
+      <section class="hero">
+        <div>
+          <strong class="muted">Upcoming</strong>
+          <h2 style="margin:4px 0 8px 0">Monday, March 2nd, 2026 — Qamaria Casual</h2>
+          <p class="muted">Starts 5:30pm at Qamaria Coffee. <a href="https://glenoakchess.org/qamaria.html">Details</a>. A light blue Owala water bottle was left at Qamaria Monday.</p>
+          <h2 style="margin:4px 0 8px 0">Sunday, March 15th, 2026</h2>
+          <p class="muted"><a href="https://new.uschess.org/2026-ohio-all-girls-state-championship">Ohio All-Girls State Championship</a></p>
+        </div>
+      </section>
+
+      <div class="grid">
+      <div class="card" id="divStandings">
+        <h3>Tournament Entries, Standings & Pairings</h3>
         <div class="infofiles">
           <script>
             $(document).ready(function() {
@@ -117,7 +117,7 @@ Glen Oak March Madness Scholastic (K-8)</a> - Congrats to our winners, Dheeraj, 
         </div>
         <span style='font-size:10px;'><a href='https://drive.google.com/drive/u/1/folders/1YoTHdIg6dTExx_wRS3DkmfCwj90p5jHu'>Add files...</a></span>
       </div>
-      <div class="content">
+      <div class="card">
         <h3>Past Events</h3>
         <ul>
           <li>Casual Chess Night at Qamaria Coffee - Monday, February 23rd, 2025</li> 
@@ -171,7 +171,8 @@ Glen Oak March Madness Scholastic (K-8)</a> - Congrats to our winners, Dheeraj, 
             <li><a href="events/2024-11-16/">Glen Oak Fall Scholastic - November 16th, 2024</a></li>
           </ul>
         </div>
-        <a href="#" id="toggle-past-events" style="cursor: pointer; text-decoration: underline; color: #333; margin-top: 10px; display: inline-block;">More...</a>
+        <a href="#" id="toggle-past-events">More...</a>
+      </div>
       </div>
     </div>
     <script>
